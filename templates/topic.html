@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>Topics</p>
+
+<ul>
+  {% for topic in object_list %}
+    <li> <a href="{% url 'topic_detail' topic.pk %}">{{ topic }}</a></li>
+  {% empty %}
+    <li>No topics have been added yet.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'new_tospic' %}">Add a new topic</a>
+{% endblock content %}
